@@ -14,7 +14,13 @@
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <modelFile modelName="Users"/>
+        <modelFile modelName="Threads"/>
+        <modelFile modelName="Replies"/>
+        <modelFile modelName="Forums"/>
+        <modelFile modelName="Categories"/>
+      </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
       <viewsDirectory>
