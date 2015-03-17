@@ -2,7 +2,7 @@
 
 class Application_Model_Threads extends Zend_Db_Table_Abstract
 {
-    protected $_name = "users";
+    protected $_name = "threads";
     
     function addThread($data){
         $row = $this->createRow();
@@ -26,6 +26,12 @@ class Application_Model_Threads extends Zend_Db_Table_Abstract
     
     function deleteThread($id){
         return $this->delete("id=$id");
+    }
+    
+    function getThreadsByForumId($forum_id) {
+        
+        $threads = $this->select()->where("forum_id = $forum_id");
+        return $this->fetchAll($threads)->toArray();
     }
 
 }

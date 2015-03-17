@@ -23,6 +23,12 @@ class Application_Model_Forums
         return $this->find($id)->toArray();
     }
     
+    function getForumsByCategoryId($cat_id)
+    {
+        $forums = $this->select()->where("cat_id = $cat_id");
+        return $this->fetchAll($forums)->toArray();
+    }
+    
     function lockForum($data){
         $this->update($data['is_locked'], "id=".$data['id']);
         return $this->fetchAll()->toArray();       

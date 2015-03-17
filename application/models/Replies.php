@@ -31,6 +31,12 @@ class Application_Model_Replies
     function deleteReply($id){
         return $this->delete("id=$id");
     }
+    
+    function getRepliesByThreadId($thread_id) {
+        
+        $replies = $this->select()->where("thread_id = $thread_id");
+        return $this->fetchAll($replies)->toArray();
+    }
 
 
 }
